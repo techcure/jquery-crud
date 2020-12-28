@@ -125,7 +125,7 @@ function edit(){
             $("#phone").val(phone);
             $("#address").val(address);
 
-    }   
+    }
 
 
 function update(){
@@ -146,9 +146,9 @@ function update(){
             $("#"+trval).children('#select_'+id_val).text($('select').val());
             $("#"+trval).children('#checked_'+id_val).text($("input[type='radio']:checked").val());
             $("#"+trval).children('#phone_'+id_val).text($("#phone").val());
-            
+
             $("#"+trval).children('#address_'+id_val).text($("#address").val());
-            
+
             $("#"+trval).children('#email_'+id_val).text($("#email").val());
             $("#"+trval).children('#pass_'+id_val).text($("#pass").val());
             $("#"+trval).children('#repass_'+id_val).text($("#repass").val());
