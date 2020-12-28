@@ -45,9 +45,7 @@ $(document).ready(function(){
 
                 alert("Please select the terms and conditions")
                 return false
-
             }
-
 
             var count = $('#tbody_id').find('tr').length+1
 
@@ -78,11 +76,8 @@ $(document).ready(function(){
                 </tr>"
 
                 );
-
         });
-
-  }); 
-
+  });
 
 function del(){
 
@@ -124,9 +119,7 @@ function edit(){
             $("#cpassword").val(cpassword);
             $("#phone").val(phone);
             $("#address").val(address);
-
     }
-
 
 function update(){
 
@@ -152,9 +145,6 @@ function update(){
             $("#"+trval).children('#email_'+id_val).text($("#email").val());
             $("#"+trval).children('#pass_'+id_val).text($("#pass").val());
             $("#"+trval).children('#repass_'+id_val).text($("#repass").val());
-
-
-
     }
 
 function openme(){
@@ -167,7 +157,6 @@ function openme(){
             $("#email").val("");
             $("#pass").val("");
             $("#repass").val("");
-
     }
 
 $(document).ready(function () {
