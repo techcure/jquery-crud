@@ -105,6 +105,7 @@ function edit(){
             var idd = this.parentElement.parentElement.id;
 
             console.log(idd);
+            $('#myModal').attr('data-row_id', idd);
 
             var name = this.parentElement.parentElement.dataset.name;
             var course = this.parentElement.parentElement.dataset.select;
@@ -115,7 +116,6 @@ function edit(){
             var phone = this.parentElement.parentElement.dataset.phone;
             var address = this.parentElement.parentElement.dataset.address;
 
-
             $('select').val(course);
             $('input:radio[name="gender"][value="'+genderid+'"]').prop('checked', true);
             $("#name").val(name);
@@ -124,7 +124,7 @@ function edit(){
             $("#cpassword").val(cpassword);
             $("#phone").val(phone);
             $("#address").val(address);
-            $('#myModal').attr('data-row_id', idd);
+
     }   
 
 
@@ -152,6 +152,8 @@ function update(){
             $("#"+trval).children('#email_'+id_val).text($("#email").val());
             $("#"+trval).children('#pass_'+id_val).text($("#pass").val());
             $("#"+trval).children('#repass_'+id_val).text($("#repass").val());
+
+
 
     }
 
