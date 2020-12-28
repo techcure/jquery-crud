@@ -24,9 +24,11 @@ $(document).ready(function(){
             }
             if ((password.length) < 4) {
                 alert("Password should be 4 character in length...!!!!!!");
+
             } 
             if (!(password).match(cpassword)) {
                 alert("Your passwords don't match. Try again?");
+                return false
 
             }
             if (phone.length<10) {
@@ -85,13 +87,13 @@ $(document).ready(function(){
 function del(){
 
             $(this).closest('tr').remove(); 
-                $('.table tbody tr').each(function(i){
-                    $($(this).find('td')[1]).html(i);
-                }); 
-                if($('.table tbody tr').length==0){
-                    $('.table tbody').append('<tr class="empty_result"><td colspan="5">There is no data !</td></tr>');
-                }
-        }
+            $('.table tbody tr').each(function(i){
+                $($(this).find('td')[1]).html(i+1);
+            }); 
+            if($('.table tbody tr').length==0){
+                $('.table tbody').append('<tr class="empty_result"><td colspan="5">There is no data !</td></tr>');
+            }
+    }
 
 function edit(){
 
@@ -113,7 +115,6 @@ function edit(){
             var phone = this.parentElement.parentElement.dataset.phone;
             var address = this.parentElement.parentElement.dataset.address;
 
-            $('#myModal').attr('data-row_id', idd);
 
             $('select').val(course);
             $('input:radio[name="gender"][value="'+genderid+'"]').prop('checked', true);
@@ -123,6 +124,7 @@ function edit(){
             $("#cpassword").val(cpassword);
             $("#phone").val(phone);
             $("#address").val(address);
+            $('#myModal').attr('data-row_id', idd);
     }   
 
 
@@ -144,29 +146,41 @@ function update(){
             $("#"+trval).children('#select_'+id_val).text($('select').val());
             $("#"+trval).children('#checked_'+id_val).text($("input[type='radio']:checked").val());
             $("#"+trval).children('#phone_'+id_val).text($("#phone").val());
+            
             $("#"+trval).children('#address_'+id_val).text($("#address").val());
+            
             $("#"+trval).children('#email_'+id_val).text($("#email").val());
             $("#"+trval).children('#pass_'+id_val).text($("#pass").val());
             $("#"+trval).children('#repass_'+id_val).text($("#repass").val());
 
     }
-function openme(){
 
-}
+function openme(){
+            $("#updatetBtn").hide();
+            $("#submitBtn").show();
+            $("#name").val("");
+            $("#phone").val("");
+            $('input:radio[name="gender"]').prop('checked', false);
+            $("#address").val("");
+            $("#email").val("");
+            $("#pass").val("");
+            $("#repass").val("");
+
+    }
 
 $(document).ready(function () {
-        $("#_checkbox").click(function () {
+            $("#_checkbox").click(function (){
             $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+            });
         });
-    });
 
 function deleteall(){
 
-        $("input[type=checkbox]:checked").closest("tr").remove();
-        $('.table tbody tr').each(function(i){
-        $($(this).find('td')[1]).html(i);
-                }); 
-        if($('.table tbody tr').length==0){
-            $('.table tbody').append('<tr class="empty_result"><td colspan="5" class = "no_data">There is no data !</td></tr>');
-        }
-}
+            $("input[type=checkbox]:checked").closest("tr").remove();
+            $('.table tbody tr').each(function(i){
+            $($(this).find('td')[1]).html(i+1);
+            });
+            if($('.table tbody tr').length==0){
+                $('.table tbody').append('<tr class="empty_result"><td colspan="5" class = "no_data">There is no data !</td></tr>');
+            }
+    }
