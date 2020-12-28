@@ -77,8 +77,8 @@ $(document).ready(function(){
 function del(){
 
             $(this).closest('tr').remove(); 
-                $('.table tbody tr').each(function(i){            
-                    $($(this).find('td')[1]).html(i);       
+                $('.table tbody tr').each(function(i){
+                    $($(this).find('td')[1]).html(i);
                 }); 
                 if($('.table tbody tr').length==0){
                     $('.table tbody').append('<tr class="empty_result"><td colspan="5">There is no data !</td></tr>');
@@ -155,6 +155,9 @@ $(document).ready(function () {
 function deleteall(){
 
         $("input[type=checkbox]:checked").closest("tr").remove();
+        $('.table tbody tr').each(function(i){
+        $($(this).find('td')[1]).html(i);
+                }); 
         if($('.table tbody tr').length==0){
             $('.table tbody').append('<tr class="empty_result"><td colspan="5" class = "no_data">There is no data !</td></tr>');
         }
