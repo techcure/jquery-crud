@@ -109,7 +109,7 @@ function edit(){
             var cpassword = this.parentElement.parentElement.dataset.repass;
             var genderid = this.parentElement.parentElement.dataset.radio;
             var phone = this.parentElement.parentElement.dataset.phone;
-            var address = this.parentElement.parentElement.dataset.address;
+            var address = $("#address_" + this.parentElement.parentElement.id.split("_")[1]).text()
 
             $('select').val(course);
             $('input:radio[name="gender"][value="'+genderid+'"]').prop('checked', true);
