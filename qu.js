@@ -4,7 +4,6 @@ $(document).ready(function(){
 
       $("#submitBtn").click(function(){
         $("#updatetBtn").hide();
-        $("_selected_items").show();
         $(".gender ").change(function(){
             var selValue = $("input[type='radio']:checked").val();
         });
@@ -17,6 +16,8 @@ $(document).ready(function(){
             var phone = $('#phone').val()
             var address = $('#address').val()
             var agree = $('#agree').val()
+
+            var agree = $("input[type=checkbox]:checked")
 
             if (name == '' || email == '' || password == '' || cpassword == '') {
                 alert("Please fill all fields...!!!!!!");
@@ -37,7 +38,14 @@ $(document).ready(function(){
                 $("#infoTable").append("<tbody></tbody>");
             }
 
-            
+
+            if(!$("#agree_checkbox").prop("checked")){
+
+                alert("Please select the terms and conditions")
+                return false
+
+            }
+
 
             var count = $('#tbody_id').find('tr').length+1
 
