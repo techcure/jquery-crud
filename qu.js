@@ -1,4 +1,12 @@
 
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("tbody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 
 $(document).ready(function(){
 
@@ -175,13 +183,3 @@ function deleteall(){
                 $('.table tbody').append('<tr class="empty_result"><td colspan="5" class = "no_data">There is no data !</td></tr>');
             }
     }
-
-
-$(document).ready(function(){
-  $("#search").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("tbody tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
