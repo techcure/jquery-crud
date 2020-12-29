@@ -32,7 +32,7 @@ $(document).ready(function(){
 
             }
             if (phone.length<10) {
-                alert("Enter 10 digits");
+                alert("Enter 10 digits of contact numbers");
                 return false
             }
 
@@ -77,7 +77,7 @@ $(document).ready(function(){
 
                 );
         });
-  });
+    });
 
 function del(){
 
@@ -115,8 +115,8 @@ function edit(){
             $('input:radio[name="gender"][value="'+genderid+'"]').prop('checked', true);
             $("#name").val(name);
             $("#email").val(email);
-            $("#password").val(password);
-            $("#cpassword").val(cpassword);
+            $("#pass").val(password);
+            $("#repass").val(cpassword);
             $("#phone").val(phone);
             $("#address").val(address);
     }
@@ -163,7 +163,7 @@ $(document).ready(function () {
             $("#_checkbox").click(function (){
             $(".checkBoxClass").prop('checked', $(this).prop('checked'));
             });
-        });
+    });
 
 function deleteall(){
 

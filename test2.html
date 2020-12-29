@@ -14,11 +14,11 @@
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
           <style type="text/css">
-              
             .no_data {
 
               }
           </style>
+
 
 </head>
 <body style="">
@@ -30,7 +30,6 @@
         <br><br>
         <br><br>
         <br><br>
-
         <table class="table table-hover table-striped mb-0" id="infoTable">
             <thead>
                 <tr>
@@ -52,7 +51,6 @@
             </thead>
             <tbody id="tbody_id">
             </tbody>
-
         </table>
         <p><button type='button' onclick='deleteall.call(this)' id="remove" class='btn btn-warning btn-sm'>Delete selected item</button></p>
 
@@ -62,24 +60,17 @@
               <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Let's do this...</h4>
-                    
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Let's do this...</h4>
                     </div>
-
                     <form id="key" name="modalform">
                     <div id="key" class="modal-body">
-
                     <!-- Modal -->
                         <div class="col-xs-6">
-                         
-
                         <input class="form-control" type="text" id="name" name="name" size="10" placeholder="Name" required/> 
                         <br> <br>   
                         </div>
-
                         <div class="col-xs-3">
-
                         <select class="form-control" required>  
                             <option value="MBA" id="MBA">MBA</option>  
                             <option value="MCA" id="MCA">MCA</option> 
@@ -99,32 +90,22 @@
                         <div class="col-xs-4">
                         <input type="number" class="form-control" name="phone" size="12" id="phone" placeholder="Phone" required /> 
                         </div>
-
                         <br> 
                         <br>  
-
                         <div class="col-mx-3">
                         <br>
                         <textarea class="form-control" cols="50" rows="5" value="address" id="address" placeholder="Address" required></textarea>  
                         </div>
-
                         <br> <br> 
                         <input class="form-control" type="email" id="email" name="email" placeholder="Email" required /> <br>
-                        <br> <br>  
-
-                       
-                         
+                        <br> <br>                       
                         <input class="form-control" type="Password" id="pass" name="pass" placeholder="Password" required> <br>   
                         <br> <br> 
                         <input class="form-control" type="Password" id="repass" name="repass" placeholder="Re-type Password" required> <br> <br>  
-                        
                         <input type="checkbox" name="agree_checkbox" value="agg" id="agree_checkbox" required>
-                        
                         <label for="agree"> I confirm </label><br><br>
                         <button type="button" class="btn btn-primary btn-sm btn-block" id="submitBtn" data-dismiss="modal" data-target="#myModal"/> Save</button>
                         <button type="button" class="btn btn-primary btn-sm btn-block" id="updatetBtn" onclick="update.call(this)" data-dismiss="modal" data-target="#myModal" style="display:none"/> Save Changes</button>
-
-
                     </div>
                     </form> 
                      <div class="modal-footer">
@@ -133,12 +114,5 @@
                 </div>
             </div>
         </div>
-
 </body>
-
-
-
-
-
-
 </html>
