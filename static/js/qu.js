@@ -83,7 +83,6 @@ $(document).ready(function(){
                 <td><button type = 'button' id = 'updateBtn' class='btn btn-success btn-sm' onclick = 'edit.call(this)'>UPDATE</button></td>\
                 <td><button type = 'button' id = 'deleteid' class='btn btn-danger btn-sm' onclick = 'del.call(this)'>DELETE</button></td>\
                 </tr>"
-
             );
         });
     });
@@ -243,3 +242,13 @@ function sortTableByName(){
         };
         $('#infoTable .tr_class').sort(compare_rows).appendTo('#infoTable');
 }
+
+/*$(document).ready(function(){
+  $("#clearBtn").click(function(){
+
+    for(i=2;i<10;i++){ 
+            $('input').val("");
+            $('textarea').val("");
+        }
+  });
+});*/

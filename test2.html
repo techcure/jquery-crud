@@ -12,24 +12,14 @@
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-          <script src="static/js/qu.js"></script>
           <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+          <script src="static/js/qu.js"></script>
 
+          <link rel="stylesheet" href="static/css/qu.css">
 
-
-          <style type="text/css">
-
-            .no_data {
-
-              }
-              table.dataTable tbody tr:hover {
-               background-color:#71d1eb !important;
-
-            }
-
-          </style>
 </head>
-<body style="">
+<body>
+
     <br>
     <br>
     <br>
@@ -46,6 +36,8 @@
                 <div class="col-xs-2">
                 <input id="search" class="form-control" type="text" placeholder="Search..." data-toggle="tooltip" title="Type to search in the table">
                 </div>
+
+                
                 <br><br>
                 <tr>
                     <th scope="col"></th>
@@ -119,8 +111,11 @@
                         <br> <br> 
                         <input class="form-control" type="Password" id="repass" name="repass" placeholder="Re-type Password" required> <br> <br>  
                         <input type="checkbox" name="agree_checkbox" value="agg" id="agree_checkbox" required>
-                        <label for="agree" data-toggle="tooltip" title="Click to agree for the terms and conditions"> I confirm </label><br><br>
+                        <label for="agree" data-toggle="tooltip" title="Click to agree for the terms and conditions"> I confirm </label> 
+                        
+                        <br><br>
                         <button type="button" class="btn btn-primary btn-sm btn-block" id="submitBtn" data-dismiss="modal" data-target="#myModal"/> Save</button>
+
                         <button type="button" class="btn btn-primary btn-sm btn-block" id="updatetBtn" onclick="update.call(this)" data-dismiss="modal" data-target="#myModal" style="display:none"/> Save Changes</button>
                     </div>
                     </form> 
@@ -132,4 +127,5 @@
         </div>
 
 </body>
+
 </html>
