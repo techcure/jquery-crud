@@ -7,18 +7,21 @@
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-          <script src="qu.js"></script>
+          
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+          <script src="static/js/qu.js"></script>
+          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
 
           <style type="text/css">
+
             .no_data {
 
               }
-
               table.dataTable tbody tr:hover {
                background-color:#71d1eb !important;
 
@@ -32,6 +35,9 @@
     <br>
     <div class="container-fluid">
         <button type="button" onclick="openme.call(this)" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal">Open Me</button>
+
+
+
         <br><br>
         <br><br>
         <br><br>
@@ -62,7 +68,7 @@
             </tbody>
         </table>
 
-        <p><button type='button' onclick='deleteall.call(this)' id="remove" class='btn btn-warning btn-sm'>Delete selected item</button></p>
+        <p><button type='button' onclick='deleteall.call(this)' id="remove" class='btn btn-primary btn-sm'>Delete selected item</button></p>
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" data-row_id="result" role="dialog">

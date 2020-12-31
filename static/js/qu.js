@@ -21,14 +21,14 @@ $(document).ready(function(){
             var email = $('#email').val();
             var password = $('#pass').val();
             var cpassword = $('#repass').val();
-            var genderid = $('#genderid').val();
+            var genderid = $("input[type='radio']:checked").val();
             var phone = $('#phone').val();
             var address = $('#address').val();
             var agree = $('#agree').val();
 
             var agree = $("input[type=checkbox]:checked");
 
-            if (name == '' || email == '' || password == '' || cpassword == '') {
+/*            if (name == '' || email == '' || password == '' || cpassword == '') {
                 alert("Please fill all fields...!!!!!!");
             }
             if ((password.length) < 4) {
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
                 alert("Please select the terms and conditions")
                 return false
-            }
+            }*/
 
             var count = $('#tbody_id').find('tr').length+1
 
