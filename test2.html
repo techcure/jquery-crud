@@ -11,15 +11,20 @@
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
           <style type="text/css">
             .no_data {
 
               }
+
+              table.dataTable tbody tr:hover {
+               background-color:#71d1eb !important;
+
+            }
+
           </style>
-
-
 </head>
 <body style="">
     <br>
@@ -33,13 +38,13 @@
         <table class="table table-hover table-striped mb-0" id="infoTable">
             <thead>
                 <div class="col-xs-2">
-                <input id="search" class="form-control" type="text" placeholder="Search..">
+                <input id="search" class="form-control" type="text" placeholder="Search..." data-toggle="tooltip" title="Type to search in the table">
                 </div>
                 <br><br>
                 <tr>
                     <th scope="col"></th>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col" onclick="sortTableByName();">Name</th>
                     <th scope="col">Course</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Phone</th>
@@ -56,6 +61,7 @@
             <tbody id="tbody_id">
             </tbody>
         </table>
+
         <p><button type='button' onclick='deleteall.call(this)' id="remove" class='btn btn-warning btn-sm'>Delete selected item</button></p>
 
         <!-- Modal -->
@@ -107,7 +113,7 @@
                         <br> <br> 
                         <input class="form-control" type="Password" id="repass" name="repass" placeholder="Re-type Password" required> <br> <br>  
                         <input type="checkbox" name="agree_checkbox" value="agg" id="agree_checkbox" required>
-                        <label for="agree"> I confirm </label><br><br>
+                        <label for="agree" data-toggle="tooltip" title="Click to agree for the terms and conditions"> I confirm </label><br><br>
                         <button type="button" class="btn btn-primary btn-sm btn-block" id="submitBtn" data-dismiss="modal" data-target="#myModal"/> Save</button>
                         <button type="button" class="btn btn-primary btn-sm btn-block" id="updatetBtn" onclick="update.call(this)" data-dismiss="modal" data-target="#myModal" style="display:none"/> Save Changes</button>
                     </div>

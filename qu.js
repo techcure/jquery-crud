@@ -3,7 +3,7 @@ $(document).ready(function(){
   $("#search").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("tbody tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 });
@@ -12,21 +12,22 @@ $(document).ready(function(){
 
       $("#submitBtn").click(function(){
         $("#updatetBtn").hide();
+        
         $(".gender ").change(function(){
             var selValue = $("input[type='radio']:checked").val();
         });
-            var name = $('#name').val()
-            var course = $('select').val()
-            var email = $('#email').val()
-            var password = $('#pass').val()
-            var cpassword = $('#repass').val()
-            var genderid = $('#genderid').val()
-            var phone = $('#phone').val()
-            var address = $('#address').val()
-            var agree = $('#agree').val()
+            var name = $('#name').val();
+            var course = $('select').val();
+            var email = $('#email').val();
+            var password = $('#pass').val();
+            var cpassword = $('#repass').val();
+            var genderid = $('#genderid').val();
+            var phone = $('#phone').val();
+            var address = $('#address').val();
+            var agree = $('#agree').val();
 
-            var agree = $("input[type=checkbox]:checked")
-
+            var agree = $("input[type=checkbox]:checked");
+/*
             if (name == '' || email == '' || password == '' || cpassword == '') {
                 alert("Please fill all fields...!!!!!!");
             }
@@ -53,7 +54,7 @@ $(document).ready(function(){
 
                 alert("Please select the terms and conditions")
                 return false
-            }
+            }*/
 
             var count = $('#tbody_id').find('tr').length+1
 
@@ -68,7 +69,7 @@ $(document).ready(function(){
             var totalUnique= rows.length
 
             $("#infoTable tbody").append(
-                "<tr id ='trid_"+ count +"' name = 'tr1' data-name="+ $('#name').val() +" data-select="+ $('select').val() +" data-radio="+ $("input[type='radio']:checked").val() +" data-phone= "+ $('#phone').val() +" data-email="+ $('#email').val() +" data-address="+ $('#address').val() +" data-pass="+ $('#pass').val() +" data-repass="+ $('#repass').val() +">\
+                "<tr id ='trid_"+ count +"' class = 'tr_class' data-name="+ $('#name').val() +" data-select="+ $('select').val() +" data-radio="+ $("input[type='radio']:checked").val() +" data-phone= "+ $('#phone').val() +" data-email="+ $('#email').val() +" data-address="+ $('#address').val() +" data-pass="+ $('#pass').val() +" data-repass="+ $('#repass').val() +">\
                 <td id = 'count_"+ count +"'><input type='checkbox' id='Checkbox1' class='checkBoxClass' value='Checkbox1'></td>\
                 <td id = 'count_"+ count +"'>"+ count +"</td>\
                 <td id = 'name_"+ count +"'>"+ $('#name').val() +"</td>\
@@ -83,7 +84,7 @@ $(document).ready(function(){
                 <td><button type = 'button' id = 'deleteid' class='btn btn-danger btn-sm' onclick = 'del.call(this)'>DELETE</button></td>\
                 </tr>"
 
-                );
+            );
         });
     });
 
@@ -183,3 +184,62 @@ function deleteall(){
                 $('.table tbody').append('<tr class="empty_result"><td colspan="5" class = "no_data">There is no data !</td></tr>');
             }
     }
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+/* Code for for pagination*/
+
+$(document).ready(function(){
+            $('#infoTable').after('<div id="nav"></div>');
+            var rowsShown = 4;
+            var rowsTotal = $('#infoTable tbody tr').length;
+            var numPages = rowsTotal/rowsShown;
+            for(i = 0;i < numPages;i++) {
+                var pageNum = i + 1;
+                $('#nav').append('<a href="#" rel="'+i+'">'+pageNum+'</a> ');
+            }
+            $('#infoTable tbody tr').hide();
+            $('#infoTable tbody tr').slice(0, rowsShown).show();
+            $('#nav a:first').addClass('active');
+            $('#nav a').bind('click', function(){
+
+            $('#nav a').removeClass('active');
+            $(this).addClass('active');
+            var currPage = $(this).attr('rel');
+            var startItem = currPage * rowsShown;
+            var endItem = startItem + rowsShown;
+            $('#infoTable tbody tr').css('opacity','0.0').hide().slice(startItem, endItem).
+            css('display','table-row').animate({opacity:1}, 300);
+    });
+});
+
+/*End pagination code*/
+
+function sortTableByName(){
+        var table=$('#infoTable');
+        var tbody =$('#tbody_id');
+
+        var all_tr = $('#infoTable tbody').children()
+        var all_td = $('#infoTable tbody').children().children()
+
+        var compare_rows = function (a,b){
+
+/*
+        var a_val = $('#infoTable tbody').find("tr").text().toLowerCase();
+        var b_val = $('#infoTable tbody').find("tr").text().toLowerCase();*/
+        
+        var a_val = $('#infoTable tbody').find("#name_1").text().toLowerCase();
+        var b_val = $('#infoTable tbody').find("#name_2").text().toLowerCase();
+
+        if (a_val>b_val){
+            return 1;
+          }
+        if (a_val<b_val){
+            return -1;
+          }
+            return 0;
+        };
+        $('#infoTable .tr_class').sort(compare_rows).appendTo('#infoTable');
+}
