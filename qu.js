@@ -27,7 +27,7 @@ $(document).ready(function(){
             var agree = $('#agree').val();
 
             var agree = $("input[type=checkbox]:checked");
-/*
+
             if (name == '' || email == '' || password == '' || cpassword == '') {
                 alert("Please fill all fields...!!!!!!");
             }
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
                 alert("Please select the terms and conditions")
                 return false
-            }*/
+            }
 
             var count = $('#tbody_id').find('tr').length+1
 
